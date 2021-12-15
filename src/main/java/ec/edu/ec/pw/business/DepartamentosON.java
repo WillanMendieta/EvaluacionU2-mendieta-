@@ -7,7 +7,7 @@ import ec.edu.ec.pw.dao.DepartamentosDAO;
 import ec.edu.ec.pw.modelo.Departamentos;
 
 @Stateless
-public class DepartamentosON implements DepartamentosONRemote{
+public class DepartamentosON implements DepartamentosONRemote {
 	
 	@Inject
 	private DepartamentosDAO  daoDepartamento;
@@ -18,8 +18,8 @@ public class DepartamentosON implements DepartamentosONRemote{
 	}
 	
 	
-	public void update(Departamentos op) {
-		daoDepartamento.update(op);
+	public void update(Departamentos p) throws Exception {
+		daoDepartamento.update(p);
 	
 
 	}

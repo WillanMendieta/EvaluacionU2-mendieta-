@@ -10,7 +10,7 @@ Run the maven goals "wildfly:undeploy"
 
 DataSource:
 This sample includes a "persistence.xml" file in "src/main/resources/META-INF". This file defines
-a persistence unit "mendietaPersistenceUnit" which uses the JakartaEE default database.
+a persistence unit "mendietaCPersistenceUnit" which uses the JakartaEE default database.
 
 In production environment, you should define a database in WildFly config and point to this database
 in "persistence.xml".
@@ -20,13 +20,13 @@ If you don't use entity beans, you can delete "persistence.xml".
 
 JSF:
 The web application is prepared for JSF 2.3 by bundling an empty "faces-config.xml" in "src/main/webapp/WEB-INF".
-In case you don't want to use JSF, simply delete this file and "src/main/webapp/beans.xml" and "src/main/java/ec/edu/ec/pw/mendieta/Jsf23Activator.java"
+In case you don't want to use JSF, simply delete this file and "src/main/webapp/beans.xml" and "src/main/java/ec/edu/ec/pw/mendietaC/Jsf23Activator.java"
 ==========================
 
 Testing:
 This sample is prepared for running unit tests with the Arquillian framework.
 
-The configuration can be found in "mendieta/pom.xml":
+The configuration can be found in "mendietaC/pom.xml":
 
 Three profiles are defined:
 -"default": no integration tests are executed.
@@ -51,6 +51,6 @@ You can delete this test file if no tests are necessary.
 Why integration tests instead of the "maven-surefire-plugin" testrunner?
 The Arquillian test runner deploys the WAR file to the WildFly server and thus you have to build it yourself with the ShrinkWrap API.
 The goal "verify" (which triggers the maven-surefire-plugin) is executed later in the maven build lifecyle than the "test" goal so that the target 
-artifact ("mendieta.war") is already built. You can build
+artifact ("mendietaC.war") is already built. You can build
 the final WAR by including those files. The "maven-surefire-plugin" is executed before the WAR file
 are created, so this WAR files would have to be built in the "@Deployment" method, too. 

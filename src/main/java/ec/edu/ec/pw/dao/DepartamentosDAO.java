@@ -13,14 +13,13 @@ public class DepartamentosDAO {
 	private EntityManager em;
 	
 	
-public void insert(Departamentos op) {
-		
-		em.persist(op);
-			
-	}
-	
-	public void update(Departamentos op) {
+	public void insert(Departamentos op) {
 
+		em.persist(op);
+
+	}
+
+	public void update (Departamentos op) {
 		em.merge(op);
 
 	}

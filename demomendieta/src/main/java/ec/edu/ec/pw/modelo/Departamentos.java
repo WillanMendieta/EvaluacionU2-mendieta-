@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 
 
+
 public class Departamentos implements Serializable {
 
 	/**
@@ -48,6 +49,11 @@ public class Departamentos implements Serializable {
 	public void setNumPisos(int numPisos) {
 		this.numPisos = numPisos;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 	
 	
 	
