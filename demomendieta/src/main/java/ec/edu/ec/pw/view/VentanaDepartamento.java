@@ -5,6 +5,7 @@ import java.util.Hashtable;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
+
 import ec.edu.ec.pw.business.DepartamentosONRemote;
 import ec.edu.ec.pw.modelo.Departamentos;
 
@@ -14,7 +15,6 @@ import ec.edu.ec.pw.modelo.Departamentos;
 public class VentanaDepartamento{
 
 	private DepartamentosONRemote deparRemote;
-	
 	
 	public void conectar() throws Exception {
 		try {  
@@ -30,7 +30,7 @@ public class VentanaDepartamento{
               
             final Context context = new InitialContext(jndiProperties);  
               
-            final String lookupName = "ejb:/mendietaC/DepartamentosON!ec.edu.ec.pw.business.DepartamentosONRemote";  
+            final String lookupName = "ejb:/mendieta/DepartamentosON!ec.edu.ec.pw.business.DepartamentosONRemote";  
               
             this.deparRemote = (DepartamentosONRemote) context.lookup(lookupName);
             
@@ -81,10 +81,10 @@ public class VentanaDepartamento{
 		// TODO Auto-generated method stub
 		VentanaDepartamento vtnCalc = new VentanaDepartamento();
 		try {
+			
 			vtnCalc.conectar();
-
-			vtnCalc.actualizarDepartamento();;
-			//vtnCalc.crearDepartamento();
+			//vtnCalc.actualizarDepartamento();;
+			vtnCalc.crearDepartamento();
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -93,5 +93,4 @@ public class VentanaDepartamento{
 		
 		
 	}
-	
 }
